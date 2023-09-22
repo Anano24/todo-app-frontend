@@ -47,6 +47,6 @@ If you'd like to contribute to this project, please follow these steps:
 ## Getting Started
 Clone the repository:
    `git clone https://github.com/Anano24/todo-app-frontend`
-- This app works with todo-app-backend
+- This app works with todo-server directory.
 
 
