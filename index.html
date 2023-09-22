@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Todo App</title>
+    <link rel="stylesheet" href="../styles/reset.css" >
+    <link rel="stylesheet" href="../styles/styles.css" >
+    <link rel="stylesheet" href="../styles/dark-mode.css" >
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png" />
+</head>
+<body>
+    <div class="todo-container">
+        <div class="logo-section">
+            <h1>TODO</h1>
+            <button id="toggle-dark-mode"><img src="../img/icon-moon.svg" class="moon" alt="moon icon"></button>
+        </div>
+
+        <form action="" method="post" id="add-task-form">
+            <input type="hidden" id="task-id" name="task-id" value="">
+            <div class="create-task-box">
+                <input type="text" name="task" id="taskInput" placeholder="Create a new todo…" class="task">
+            </div>
+        </form>
+
+        <div id="taskList">    
+        </div>
+
+        <div class="task footer-task-top">
+            <div class="leftItem" id="items-left">0 items left</div>
+            <div class="clearCompleted hover">Clear Completed</div>
+        </div>
+        <div class="task footer-task-btm">
+            <div class="all">All</div>
+            <div class="active hover">Active</div>
+            <div class="completed hover" >Completed</div>
+        </div>
+        
+    </div>
+    <script>
+        // JavaScript to toggle dark mode
+        const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+        const darkModeStylesheet = document.getElementById('dark-mode-stylesheet');
+        
+        // Add a flag to track the dark mode state
+        let isDarkMode = false;
+    
+        toggleDarkModeButton.addEventListener('click', () => {
+            // Toggle the dark mode flag
+            isDarkMode = !isDarkMode;
+    
+            // Toggle dark mode class on the body
+            document.body.classList.toggle('dark-mode', isDarkMode);
+    
+            // Toggle moon/sun icon based on the flag
+            const moonIcon = 'img/icon-moon.svg';
+            const sunIcon = 'img/icon-sun.svg';
+            
+            toggleDarkModeButton.querySelector('img').src = isDarkMode ? sunIcon : moonIcon;
+    
+            // You can add more logic here to update other styles, background image, colors, etc.
+        });
+    </script>
+    
+    <script src="../js/crud.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+      
+</body>
+</html> 
+

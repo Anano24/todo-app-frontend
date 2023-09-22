@@ -1,0 +1,27 @@
+/* Dark mode styles */
+.dark-mode {
+    background-color: #171823;
+    background-image: url("../img/bg-desktop-dark.jpg");
+}
+
+.dark-mode .task {
+    background-color: #25273D;
+    border: 1px solid #393A4B;
+    color: #C8CBE7;
+}
+
+.dark-mode #taskInput {
+    color: #C8CBE7;
+}
+.dark-mode .checkmark {
+    border: 1px solid #393A4B;  
+}
+.dark-mode .footer-task-btm, .dark-mode .footer-task-top {
+    color: #5B5E7E;
+}
+.dark-mode .hover:hover {
+    color: #E3E4F1;
+}
+.dark-mode .update-pan {
+    opacity: 40%;  
+}

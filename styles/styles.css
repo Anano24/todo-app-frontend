@@ -1,0 +1,266 @@
+/* Import 'Josefin Sans' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Outfit:wght@300;400;600&family=Plus+Jakarta+Sans:wght@500;700;800&family=Red+Hat+Display:wght@700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/bg-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px;  
+}
+
+.todo-container {
+    width: 100%;
+    text-align: center;
+}
+.logo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0 40px;
+}
+.moon {
+    width: 20px;
+    height: 20px;
+}
+h1 {
+    font-size: 30px;
+    width: 108.14px;
+    height: 20px;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: 700;
+}
+button {
+    background-color: transparent;
+    border: 0;
+}
+.create-task-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;  
+}
+
+#taskInput {
+    font-family: 'Josefin Sans';
+    border: none;
+    outline: none;
+    padding: 0;
+    border-radius: 5px;
+    padding-left: 24px;
+    color: #393A4B;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.17px; 
+}
+#taskInput::placeholder {
+    color: #9495A5; /* Change this to your desired color */
+    font-family: 'Josefin Sans';
+}
+.task {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    background-color: #f9f9f9;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400; 
+    color: #494C6B;
+    flex-grow: 1; /* Allow task text to grow and take up available space */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#taskList {
+    position: relative;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1), 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+.update-pan {
+    opacity: 60%;
+    position: absolute;
+    right: 53px;
+}
+.delete-img {
+    position: absolute;
+    right: 25px;
+}
+.footer-task-top {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0  0 5px 5px;
+    color: #9495A5;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1), 10px 0 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;  
+
+}
+.footer-task-btm {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 75px;
+    margin-top: 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9495A5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;  
+}
+.hover:hover {
+    cursor: pointer;
+    color: #494C6B;
+}
+.all {
+    color: #3A7CFD;
+    cursor: pointer;
+}
+
+/* The container */
+.checkbox-label {
+    position: relative;
+    display: inline-flex; /* Use inline-flex to align vertically */
+    align-items: center; /* Vertically center the checkbox and text */
+    flex-shrink: 0; /* Prevent checkbox from growing or shrinking */
+    width: 24px;
+    height: 24px;
+    margin-right: 15px; /* Add spacing between checkbox and text */
+}
+  
+/* Hide the browser's default checkbox */
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+}
+  
+/*  Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border: 1px solid #E3E4F1;
+    border-radius: 50%;
+}
+.checkmark:hover {
+    border: 1px solid rgb(191, 109, 231); 
+}    
+/*  When the checkbox is checked, add a gradient background */
+.checkbox-label input:checked ~ .checkmark {
+    background: linear-gradient(rgba(85, 221, 255, 1), rgba(192, 88, 243, 1));
+    height: 25px;
+    width: 25px;
+    border: none;
+}
+  
+/*  Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Show the checkmark when checked */
+.checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Style the checkmark/indicator */
+.checkbox-label .checkmark:after {
+    background-image: url('../img/icon-check.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add styles for delete and update icons */
+.delete-img,
+.update-pan {
+    display: none;
+    cursor: pointer;
+}
+
+.task:hover .delete-img,
+.task:hover .update-pan {
+    display: inline-flex;
+}
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-image: url("../img/bg-desktop-light.jpg");
+        background-size: 100% 300px;
+    }
+
+    .todo-container {
+        width: 540px;
+    }
+    .logo-section {
+        margin: 46px 0 48px;
+    }
+    .moon {
+        width: 25px;
+        height: 26px;
+    }
+    h1 {
+        font-size: 40px;
+        width: 167px;
+        height: 40px;
+        letter-spacing: 15px; 
+    }
+    .create-task-box {
+        margin-bottom: 24px;  
+    }
+    #taskInput {
+        font-size: 18px;
+        letter-spacing: -0.25px; 
+    }
+    .task {
+        padding: 0 24px;
+        height: 64px;
+        font-size: 18px;
+        letter-spacing: -0.25px; 
+    }
+    .update-pan {
+        margin-left: 50px;
+    }
+    .delete-img {
+        padding-left: 15px;
+    }
+    .checkbox-label {
+        margin-right: 24px; /* Add spacing between checkbox and text */
+    }
+    .footer-task-btm, .footer-task-top {
+        font-size: 16px;
+        
+    }
+    
+}
+
